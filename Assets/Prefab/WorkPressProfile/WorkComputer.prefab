@@ -2274,6 +2274,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3177040158480655043, guid: 416fe6cef04b0434384711aeda40decd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6300167574079669816, guid: 416fe6cef04b0434384711aeda40decd, type: 3}
       propertyPath: m_Name
       value: ClockMeter
@@ -2289,6 +2293,10 @@ PrefabInstance:
     - target: {fileID: 7329871296764124941, guid: 416fe6cef04b0434384711aeda40decd, type: 3}
       propertyPath: m_Name
       value: WorkingComputer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329871296764124941, guid: 416fe6cef04b0434384711aeda40decd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8008930259037578451, guid: 416fe6cef04b0434384711aeda40decd, type: 3}
       propertyPath: m_Color.b
