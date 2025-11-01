@@ -8,6 +8,7 @@ public class GameEventManager : MonoBehaviour
     public bool IsAnomalyStarted;
     public int gamestate,AnomalyIndex;
     public List<int> spawnedAnomalyIndex;
+    public List<GameObject> spawnedAnomalyList;
     public List<GameObject> anomalyPrefabs;
     public Transform anomalySpawner;
 
@@ -48,5 +49,6 @@ public class GameEventManager : MonoBehaviour
     {
         GameObject anomaly = Instantiate(anomalyPrefabs[AnomalyIndex], anomalySpawner);
         spawnedAnomalyIndex.Add(AnomalyIndex);
+        spawnedAnomalyList.Add(anomaly);
     }
 }
