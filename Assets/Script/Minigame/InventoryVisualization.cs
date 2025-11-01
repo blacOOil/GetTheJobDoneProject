@@ -15,11 +15,6 @@ public class InventoryVisualization : MonoBehaviour
     private List<GameObject> spawnedItems = new List<GameObject>();
     private int lastItemCount = 0;
 
-    [Header("Item Detail")]
-    public TextMeshProUGUI ItemNameText,ItemDesText;
-    public int ItemDataVisualIndex = 0;
-    
-
     void Start()
     {
         GameManager = GameObject.Find("GameManager");
@@ -69,12 +64,12 @@ public class InventoryVisualization : MonoBehaviour
 
             lastItemCount = inventory_Data.Operation.Count;
         }
-        VisualDataDetail();
+
     }
-    public void VisualDataDetail()
+    public void VisualDataDetail(int IntemIdex)
     {
-        OperationBehavior ItemData = InventoryList[ItemDataVisualIndex].GetComponent<OperationBehavior>();
-       ItemNameText.text = ItemData.ItemName;
-        ItemDesText.text = ItemData.ItemDescription;
+      // OperationBehavior ItemData = InventoryList[ItemDataVisualIndex].GetComponent<OperationBehavior>();
+      // ItemNameText.text = ItemData.ItemName;
+       // ItemDesText.text = ItemData.ItemDescription;
     }
 }

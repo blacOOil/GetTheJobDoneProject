@@ -6,7 +6,7 @@ public class ActionButton : MonoBehaviour
     public GameObject OperationUInventor;
     public Default_Minigame default_Minigame;
     public AnomalySetting anomalySetting;
-    public List<GameObject> ItemtoDeploy;
+    public List<GameObject> ItemtoDeploy,ButtonGadget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
      void Start()
     {

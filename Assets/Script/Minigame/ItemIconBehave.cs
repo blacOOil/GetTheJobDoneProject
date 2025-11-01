@@ -11,6 +11,9 @@ public class ItemIconBehave : MonoBehaviour
     public int ItemAmount,ItemIndex;
     public OperationBehavior OperationBehavior;
     public InventoryVisualization inventoryVisualization;
+
+    [Header("TextOperty")]
+    public TextMeshProUGUI ItemName,ItemDes;
     // Update is called once per frame
     void Update()
     {
@@ -19,10 +22,13 @@ public class ItemIconBehave : MonoBehaviour
             IconImage.sprite = IconSprite;
         }
         textMeshpro.text = ItemAmount.ToString();
+        ItemName.text = OperationBehavior.ItemName;
+        ItemDes.text = OperationBehavior.ItemDescription;
 
     }
-    public void Visualizedata()
+    public void AddtoDeployment()
     {
-        inventoryVisualization.ItemDataVisualIndex = ItemIndex;
+        inventoryVisualization.VisualDataDetail(ItemIndex);
     }
+
 }
