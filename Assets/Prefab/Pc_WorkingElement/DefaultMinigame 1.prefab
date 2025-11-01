@@ -479,10 +479,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManager: {fileID: 0}
   ItemInventor_Prefab: {fileID: 3617778439576305408, guid: 182abe1ced2fc0a449f5896879235fd2, type: 3}
+  default_Minigame: {fileID: 924990855429603746}
   inventory_Data: {fileID: 0}
+  InventoryList: []
   inventoryUIParent: {fileID: 5805978003967561206}
   ItemNameText: {fileID: 4701775819022868595}
   ItemDesText: {fileID: 6034431799930665741}
+  ItemDataVisualIndex: 0
 --- !u!1 &1180755381005378907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +2340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OperationUInventor: {fileID: 761357684575451645}
+  default_Minigame: {fileID: 924990855429603746}
+  anomalySetting: {fileID: 0}
+  ItemtoDeploy: []
 --- !u!1 &7686529132841121365
 GameObject:
   m_ObjectHideFlags: 0

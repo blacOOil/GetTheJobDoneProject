@@ -4,7 +4,7 @@ using TMPro;
 
 public class ItemIconBehave : MonoBehaviour
 {
-
+    public Default_Minigame default_Minigame;
     public Image IconImage;
     public TextMeshProUGUI textMeshpro;
     public Sprite IconSprite;

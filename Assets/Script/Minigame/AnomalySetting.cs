@@ -1,6 +1,6 @@
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-
+using System.Collections.Generic;
 
 public class AnomalySetting : MonoBehaviour
 {
@@ -24,6 +24,10 @@ public class AnomalySetting : MonoBehaviour
     public bool IsContained;         // true when fully contained/resolved
 
     public bool IsFiledOpened;
+
+    [Header("Handled State")]
+    public List<GameObject> OperativeItem;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

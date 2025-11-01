@@ -5,8 +5,10 @@ public class InventoryVisualization : MonoBehaviour
 {
     public GameObject GameManager;
     public GameObject ItemInventor_Prefab;
+    public Default_Minigame default_Minigame;
     public Inventory inventory_Data;
     public List<GameObject> InventoryList;
+
 
     [Header("Spawn Settings")]
     public Transform inventoryUIParent; // Optional: assign where to spawn in hierarchy
@@ -43,6 +45,7 @@ public class InventoryVisualization : MonoBehaviour
                 newOB.OperationBehavior = ItemData.GetComponent<OperationBehavior>();
                 newOB.ItemIndex = i;
                 newOB.inventoryVisualization = gameObject.GetComponent<InventoryVisualization>();
+                newOB.default_Minigame = default_Minigame;
                 spawnedItems.Add(newItem);
             }
 

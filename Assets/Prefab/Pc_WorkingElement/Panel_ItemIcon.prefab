@@ -96,6 +96,8 @@ MonoBehaviour:
   IconSprite: {fileID: 0}
   ItemAmount: 0
   ItemIndex: 0
+  OperationBehavior: {fileID: 0}
+  inventoryVisualization: {fileID: 0}
 --- !u!1 &3755924765927036673
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +292,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3276953665842547642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3665625839415407195}
+        m_TargetAssemblyTypeName: ItemIconBehave, Assembly-CSharp
+        m_MethodName: Visualizedata
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7415121346522002786
 GameObject:
   m_ObjectHideFlags: 0
