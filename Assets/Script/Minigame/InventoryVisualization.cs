@@ -1,15 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 public class InventoryVisualization : MonoBehaviour
 {
     public GameObject GameManager;
     public GameObject ItemInventor_Prefab;
     public Inventory inventory_Data;
+    public List<GameObject> InventoryList;
 
     [Header("Spawn Settings")]
     public Transform inventoryUIParent; // Optional: assign where to spawn in hierarchy
     private List<GameObject> spawnedItems = new List<GameObject>();
     private int lastItemCount = 0;
+
+    [Header("Item Detail")]
+    public TextMeshProUGUI ItemNameText,ItemDesText;
+    public int ItemDataVisualIndex = 0;
+    
 
     void Start()
     {
@@ -19,6 +26,7 @@ public class InventoryVisualization : MonoBehaviour
 
     void Update()
     {
+        InventoryList = inventory_Data.Operation;
         if (inventory_Data == null) return;
 
         // Check for new items added to the Inventory
@@ -28,6 +36,13 @@ public class InventoryVisualization : MonoBehaviour
             for (int i = lastItemCount; i < inventory_Data.Operation.Count; i++)
             {
                 GameObject newItem = Instantiate(ItemInventor_Prefab, inventoryUIParent);
+                ItemIconBehave newOB = newItem.GetComponent<ItemIconBehave>();
+                GameObject ItemData = inventory_Data.Operation[i];
+                newOB.IconSprite = ItemData.GetComponent<OperationBehavior>().ItemImage;
+                newOB.ItemAmount = ItemData.GetComponent<OperationBehavior>().Item_Amount;
+                newOB.OperationBehavior = ItemData.GetComponent<OperationBehavior>();
+                newOB.ItemIndex = i;
+                newOB.inventoryVisualization = gameObject.GetComponent<InventoryVisualization>();
                 spawnedItems.Add(newItem);
             }
 
@@ -51,5 +66,12 @@ public class InventoryVisualization : MonoBehaviour
 
             lastItemCount = inventory_Data.Operation.Count;
         }
+        VisualDataDetail();
+    }
+    public void VisualDataDetail()
+    {
+        OperationBehavior ItemData = InventoryList[ItemDataVisualIndex].GetComponent<OperationBehavior>();
+       ItemNameText.text = ItemData.ItemName;
+        ItemDesText.text = ItemData.ItemDescription;
     }
 }
