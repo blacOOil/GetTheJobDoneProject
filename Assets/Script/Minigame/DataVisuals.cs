@@ -19,7 +19,24 @@ public class DataVisuals : MonoBehaviour
         AnomalyDetected = gameEventManager.spawnedAnomalyList;
         ActiveThreatNum = AnomalyDetected.Count;
         ActiveThreatText.text = ActiveThreatNum.ToString();
+        ActiveOPNum = GetActiveThreat();
         ActiveOPText.text = ActiveOPNum.ToString();
         ContainmentText.text = Containment.ToString();
     }
+    public int GetActiveThreat()
+    {
+        List<GameObject> list = new List<GameObject>();
+
+        foreach (GameObject anomaly in AnomalyDetected)
+        {
+            var anomalyData = anomaly.GetComponent<AnomalySetting>();
+            if (anomalyData != null && anomalyData.IsHandling)
+            {
+                list.Add(anomaly);
+            }
+        }
+
+        return list.Count;
+    }
+
 }
