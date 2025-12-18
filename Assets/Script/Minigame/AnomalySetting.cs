@@ -1,4 +1,4 @@
-using UnityEditor.ShaderGraph.Internal;
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -28,6 +28,11 @@ public class AnomalySetting : MonoBehaviour
     [Header("Handled State")]
     public List<GameObject> OperativeItem;
 
+    [Header("Location State")]
+    public string CountryName;
+    public string AddressName;
+    public int CountryId;
+    public int AddressId;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

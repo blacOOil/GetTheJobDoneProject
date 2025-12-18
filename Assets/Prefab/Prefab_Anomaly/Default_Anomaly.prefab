@@ -58,3 +58,8 @@ MonoBehaviour:
   IsHandling: 0
   IsContained: 0
   IsFiledOpened: 0
+  OperativeItem: []
+  CountryName: Russia
+  AddressName: Moscow
+  CountryId: 0
+  AddressId: 0

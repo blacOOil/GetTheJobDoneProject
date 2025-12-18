@@ -1,4 +1,4 @@
-using NUnit.Framework;
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -12,6 +12,8 @@ public class GameEventManager : MonoBehaviour
     public List<GameObject> anomalyPrefabs;
     public Transform anomalySpawner;
 
+    
+    
     [Header("Spawn Timer")]
     public float spawnInterval;   // seconds between spawns
     public float spawnTimer = 0f;      // counts up each frame
@@ -50,5 +52,7 @@ public class GameEventManager : MonoBehaviour
         GameObject anomaly = Instantiate(anomalyPrefabs[AnomalyIndex], anomalySpawner);
         spawnedAnomalyIndex.Add(AnomalyIndex);
         spawnedAnomalyList.Add(anomaly);
+       
     }
+   
 }

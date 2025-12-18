@@ -1,14 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Cinemachine.Editor; // For convenient filtering
+using Unity.Cinemachine.Editor;
+using Unity.VisualScripting; // For convenient filtering
 
 public class OPVisuallization : MonoBehaviour
 {
     public List<GameObject> Anomalylist;
     public List<GameObject> ALertPrefab;
     public LogSystem logsystem;
-    public Transform WorldMap;
+    public Transform SpawnPlace;
 
 
     [Header("Settings")]
@@ -18,6 +19,8 @@ public class OPVisuallization : MonoBehaviour
     private HashSet<GameObject> previousAnomalies = new HashSet<GameObject>();
 
     public MinigameSpawner minigameSpawner;
+    [Header("Map Spawn Location")]
+    public Map_Viz map_viz;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -70,11 +73,17 @@ public class OPVisuallization : MonoBehaviour
             Debug.LogWarning("Invalid Alert Icon Index!");
             return;
         }
-
+        GetSpawnPostion(anomaly);
         // Spawn alert icon under WorldMap
-        GameObject alert = Instantiate(ALertPrefab[indexIcon], WorldMap);
+        GameObject alert = Instantiate(ALertPrefab[indexIcon], SpawnPlace);
         alert.GetComponent<AlertButtonScript>().anomalySetting = anomaly;
-
+        
     }
-    
+    public void GetSpawnPostion(AnomalySetting anomaly)
+    {
+        int anomalycountryId = anomaly.CountryId;
+        List<Transform> countryTranformList = map_viz.CountryTranformList;
+        SpawnPlace.position = countryTranformList[anomalycountryId].position;
+    }
+
 }
