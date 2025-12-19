@@ -83,7 +83,7 @@ public class OPVisuallization : MonoBehaviour
     {
         int anomalycountryId = anomaly.CountryId;
         List<Transform> countryTranformList = map_viz.CountryTranformList;
-        SpawnPlace.position = countryTranformList[anomalycountryId].position;
+        SpawnPlace = countryTranformList[anomalycountryId];
     }
 
 }
