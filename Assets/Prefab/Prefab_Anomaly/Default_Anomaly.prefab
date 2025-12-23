@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b541d727cd9c0c242b44895de0d964d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnomalyEventName: EventNamehere
+  AnomalyEventName: BigtroubleHelp
   AnomalyEventDes: BadShitHappend
   AnomalyName: 'ScaryDemon '
   AnomalyDes: ThisThingIsReallyScary

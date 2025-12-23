@@ -58,6 +58,7 @@ public class OPVisuallization : MonoBehaviour
                 AlertIconSpawning(Random.Range(0, ALertPrefab.Count),anomaly.GetComponent<AnomalySetting>());
                 previousAnomalies.Add(anomaly);
                 logsystem.SpawnedBlackLog(anomaly.GetComponent<AnomalySetting>());
+                logsystem.LogState = 0;
             }
         }
 

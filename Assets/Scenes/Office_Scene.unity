@@ -6229,6 +6229,10 @@ PrefabInstance:
       propertyPath: gamemanager
       value: 
       objectReference: {fileID: 1904468370}
+    - target: {fileID: 1129114028157605665, guid: 0da4edfe214c60b4d9be5f86bec0c178, type: 3}
+      propertyPath: MinigamePrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1187259183639841586, guid: 0da4edfe214c60b4d9be5f86bec0c178, type: 3}
       propertyPath: m_IsActive
       value: 1

@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.UI;
 public class LogProperty : MonoBehaviour
 {
     public TextMeshProUGUI Time, EventName;
@@ -7,6 +9,10 @@ public class LogProperty : MonoBehaviour
     public AnomalySetting anomalySetting;
     public GameObject followUpUIPrefab;
     public Transform UISpawner;
+    public Image Log_image;
+
+    public int LogState;
+    public List<Sprite> LogImageList;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +25,8 @@ public class LogProperty : MonoBehaviour
   
         Time.text = TimerText;
         EventName.text = EventNameText;
+        Log_image.sprite = LogImageList[LogState];
+
         
     }
     public void VISpawned()

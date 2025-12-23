@@ -10,6 +10,7 @@ public class LogSystem : MonoBehaviour
 
     public string event_timer, eventname;
     public float ClockSpeed = 15f;
+    public int LogState;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,10 +30,13 @@ public class LogSystem : MonoBehaviour
     {
         GameObject SpawnedBacklog = Instantiate(BackLogButton_Prefab, Incident_Report.transform);
         event_timer = FormatTime(Timer);
-        SpawnedBacklog.GetComponent<LogProperty>().TimerText = event_timer;
+
+        LogProperty logproperty = SpawnedBacklog.GetComponent<LogProperty>();
+        logproperty.TimerText = event_timer;
         eventname = anomalySetting.AnomalyEventName;
-        SpawnedBacklog.GetComponent <LogProperty>().EventNameText = eventname;
-        SpawnedBacklog.GetComponent<LogProperty>().anomalySetting = anomalySetting;
+        logproperty.EventNameText = eventname;
+        logproperty.anomalySetting = anomalySetting;
+        logproperty.LogState = LogState;
 
     }
     string FormatTime(float timeInSeconds)
