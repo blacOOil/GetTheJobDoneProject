@@ -23,18 +23,18 @@ public class InventoryVisualization : MonoBehaviour
 
     void Update()
     {
-        InventoryList = inventory_Data.Operation;
+        InventoryList = inventory_Data.OperationItem;
         if (inventory_Data == null) return;
 
         // Check for new items added to the Inventory
-        if (inventory_Data.Operation.Count > lastItemCount)
+        if (inventory_Data.OperationItem.Count > lastItemCount)
         {
             // Spawn new visual items for each new entry
-            for (int i = lastItemCount; i < inventory_Data.Operation.Count; i++)
+            for (int i = lastItemCount; i < inventory_Data.OperationItem.Count; i++)
             {
                 GameObject newItem = Instantiate(ItemInventor_Prefab, inventoryUIParent);
                 ItemIconBehave newOB = newItem.GetComponent<ItemIconBehave>();
-                GameObject ItemData = inventory_Data.Operation[i];
+                GameObject ItemData = inventory_Data.OperationItem[i];
                 newOB.IconSprite = ItemData.GetComponent<OperationBehavior>().ItemImage;
                 newOB.ItemAmount = ItemData.GetComponent<OperationBehavior>().Item_Amount;
                 newOB.OperationBehavior = ItemData.GetComponent<OperationBehavior>();
@@ -45,13 +45,13 @@ public class InventoryVisualization : MonoBehaviour
             }
 
             // Update count
-            lastItemCount = inventory_Data.Operation.Count;
+            lastItemCount = inventory_Data.OperationItem.Count;
         }
 
         // (Optional) Handle removed items
-        if (inventory_Data.Operation.Count < lastItemCount)
+        if (inventory_Data.OperationItem.Count < lastItemCount)
         {
-            int itemsToRemove = lastItemCount - inventory_Data.Operation.Count;
+            int itemsToRemove = lastItemCount - inventory_Data.OperationItem.Count;
             for (int i = 0; i < itemsToRemove; i++)
             {
                 if (spawnedItems.Count > 0)
@@ -62,7 +62,7 @@ public class InventoryVisualization : MonoBehaviour
                 }
             }
 
-            lastItemCount = inventory_Data.Operation.Count;
+            lastItemCount = inventory_Data.OperationItem.Count;
         }
 
     }

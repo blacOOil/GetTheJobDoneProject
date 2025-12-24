@@ -169,6 +169,7 @@ MonoBehaviour:
   event_timer: 
   eventname: 
   ClockSpeed: 15
+  LogState: 0
 --- !u!114 &75971479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +204,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountryTranformList:
   - {fileID: 33219}
+--- !u!114 &75971491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75971461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7353332b82464d9419a040b5bcf9e436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &163481652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5290,7 +5303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d7d7ff814e1394ba7a512cb6c710ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Operation:
+  OperationItem:
   - {fileID: 457824173}
   - {fileID: 2001917163}
 --- !u!1001 &1914329310
@@ -6306,6 +6319,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 765190150927014197, guid: 0da4edfe214c60b4d9be5f86bec0c178, type: 3}
       insertIndex: -1
       addedObject: {fileID: 75971485}
+    - targetCorrespondingSourceObject: {fileID: 765190150927014197, guid: 0da4edfe214c60b4d9be5f86bec0c178, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 75971491}
     - targetCorrespondingSourceObject: {fileID: 8601329691020702912, guid: 0da4edfe214c60b4d9be5f86bec0c178, type: 3}
       insertIndex: -1
       addedObject: {fileID: 510943073}

@@ -1,11 +1,7 @@
-using NUnit.Framework;
 using UnityEngine;
-using System.Collections.Generic;
 
-public class Inventory : MonoBehaviour
+public class OperationhandleSystem : MonoBehaviour
 {
-    public List<GameObject> OperationItem;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
