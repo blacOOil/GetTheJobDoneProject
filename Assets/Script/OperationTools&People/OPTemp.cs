@@ -1,8 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class OPTemp : MonoBehaviour
 {
-    public GameObject[] ItemReady = new GameObject[3];
+    public List<GameObject> ItemReadyPanel;
+    public List<Image> ItemReadyImage;
+    public OperationhandleSystem operationhandleSystem;
+    public Default_Minigame default_Minigame;
+    public AnomalySetting anomalySetting;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +17,14 @@ public class OPTemp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (default_Minigame.anomalysetted != null) 
+        {
+            anomalySetting = default_Minigame.anomalysetted;
+        }
+    }
+   
+    public void DeployOperation()
+    {
+        anomalySetting.operationhandler = operationhandleSystem;
     }
 }

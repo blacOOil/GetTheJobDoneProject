@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7992410964901219186}
   - component: {fileID: 1100591908293159677}
+  - component: {fileID: 5559013774832679600}
   m_Layer: 0
   m_Name: Default_Anomaly
   m_TagString: anomaly
@@ -58,8 +59,24 @@ MonoBehaviour:
   IsHandling: 0
   IsContained: 0
   IsFiledOpened: 0
+  operationhandler: {fileID: 0}
+  oPnAnomaly: {fileID: 5559013774832679600}
   OperativeItem: []
   CountryName: Russia
   AddressName: Moscow
   CountryId: 0
   AddressId: 0
+--- !u!114 &5559013774832679600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659976110359506276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ae78f95d1abed41a104c6eb49c91f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnomalySetting: {fileID: 1100591908293159677}
+  OperationhandleSystem: {fileID: 0}

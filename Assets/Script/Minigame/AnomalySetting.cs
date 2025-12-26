@@ -12,8 +12,12 @@ public class AnomalySetting : MonoBehaviour
     public float AnomalyPlace;
 
     [Header("Anomaly Parameters")]
-    public int AnomalyType;          // e.g. 0 = Ghost, 1 = Creature, 2 = Machine failure
-    public float Behavior;           // behavior intensity or randomness
+    public bool IsAnomalymobility; // true = movable false = placement
+    public int IsEventCrowed;      // 1 = in the City 2 = in  the forest
+    public int anoTypeA, anoTypeB,anoTypeC;
+    public float[] AnomalyType;          // e.g. A = Magical, B = Creature, C = Machine failure
+    public float BehaviorFriendly,BehaviorRule, BehaviorAggressive, BehaviorRandomness;           // behavior intensity or randomness
+    public float[] BehaviorMatrix;
     public float ThreatLevel;        // value to represent danger level (0–10)
     public Sprite AnomalyImage;      // image or icon for UI
 
@@ -26,6 +30,9 @@ public class AnomalySetting : MonoBehaviour
     public bool IsFiledOpened;
 
     [Header("Handled State")]
+    public OperationhandleSystem operationhandler;
+    public OPnAnomalyCal oPnAnomaly;
+    public int Opresult = 0 ;
     public List<GameObject> OperativeItem;
 
     [Header("Location State")]
@@ -48,9 +55,14 @@ public class AnomalySetting : MonoBehaviour
     void Update()
     {
        AnomalyTimer += Time.deltaTime;
+        if(operationhandler != null)
+        {
+            operationhandler = oPnAnomaly.OperationhandleSystem;
+            IsHandling = true;
+        }
         if (IsHandling) 
         {
-            
+            Opresult = oPnAnomaly.startoperationCalculation();
         }
         if (IsContained) 
         {

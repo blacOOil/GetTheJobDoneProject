@@ -7,6 +7,8 @@ public class ActionButton : MonoBehaviour
     public Default_Minigame default_Minigame;
     public AnomalySetting anomalySetting;
     public List<GameObject> ItemtoDeploy,ButtonGadget;
+    public OPTemp OPTemp;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
      void Start()
     {
@@ -20,7 +22,7 @@ public class ActionButton : MonoBehaviour
 
     public void Deployment()
     {
-        anomalySetting.IsHandling = true;
+        OPTemp.DeployOperation();
     }
 
 }
