@@ -14,10 +14,8 @@ public class AnomalySetting : MonoBehaviour
     [Header("Anomaly Parameters")]
     public bool IsAnomalymobility; // true = movable false = placement
     public int IsEventCrowed;      // 1 = in the City 2 = in  the forest
-    public int anoTypeA, anoTypeB,anoTypeC;
-    public float[] AnomalyType;          // e.g. A = Magical, B = Creature, C = Machine failure
-    public float BehaviorFriendly,BehaviorRule, BehaviorAggressive, BehaviorRandomness;           // behavior intensity or randomness
-    public float[] BehaviorMatrix;
+    public int anoTypeA, anoTypeB,anoTypeC; // e.g. A = Magical, B = Creature, C = Machine failure
+    public float BehaviorFriendly,BehaviorRule, BehaviorAggressive, BehaviorRandomness;      
     public float ThreatLevel;        // value to represent danger level (0–10)
     public Sprite AnomalyImage;      // image or icon for UI
 

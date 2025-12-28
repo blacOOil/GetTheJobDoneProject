@@ -4,10 +4,15 @@ using UnityEngine.UI;
 public class OPTemp : MonoBehaviour
 {
     public List<GameObject> ItemReadyPanel;
+    public List<GameObject> ItemReadyList;
     public List<Image> ItemReadyImage;
+
+    public GameObject SelectedItem;
+
     public OperationhandleSystem operationhandleSystem;
     public Default_Minigame default_Minigame;
     public AnomalySetting anomalySetting;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
