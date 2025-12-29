@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class OPTemp : MonoBehaviour
 {
     public List<GameObject> ItemReadyPanel;
-    public List<GameObject> ItemReadyList;
     public List<Image> ItemReadyImage;
 
     public GameObject SelectedItem;
@@ -32,4 +31,13 @@ public class OPTemp : MonoBehaviour
     {
         anomalySetting.operationhandler = operationhandleSystem;
     }
+    public void SelectItemSlot(int slot)
+    {
+        for (int i = 0; i < ItemReadyPanel.Count; i++)
+        {
+            var item = ItemReadyPanel[i].GetComponent<ItemSelecBahavior>();
+            item.Iselected = (i == slot);
+        }
+    }
+
 }

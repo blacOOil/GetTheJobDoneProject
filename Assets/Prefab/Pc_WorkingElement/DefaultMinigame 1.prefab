@@ -647,7 +647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -101.4, y: 13.6}
+  m_AnchoredPosition: {x: -100, y: 13.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1259968224532278110
@@ -782,7 +782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -233.41426, y: 0}
+  m_AnchoredPosition: {x: 16, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184301541752595183
@@ -845,7 +845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.899853, y: -11}
+  m_AnchoredPosition: {x: -35.8, y: -11}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5774057992502816834
@@ -930,6 +930,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 775209331906562045}
+        m_TargetAssemblyTypeName: OPTemp, Assembly-CSharp
+        m_MethodName: SelectItemSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4336513374654027402}
         m_TargetAssemblyTypeName: ActionButton, Assembly-CSharp
         m_MethodName: OpenInventory
@@ -956,6 +968,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OperationBehavior: {fileID: 1184301541752595183}
   ItemImage: {fileID: 5194683638584421227}
+  Plusbutton: {fileID: 2357389404416307247}
+  Iselected: 0
 --- !u!1 &1787357873455022093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -481.39038, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271867338402474615
@@ -2590,7 +2604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22.700146, y: -11}
+  m_AnchoredPosition: {x: 34.8, y: -11}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5472989243500195295
@@ -2675,6 +2689,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 775209331906562045}
+        m_TargetAssemblyTypeName: OPTemp, Assembly-CSharp
+        m_MethodName: SelectItemSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4336513374654027402}
         m_TargetAssemblyTypeName: ActionButton, Assembly-CSharp
         m_MethodName: OpenInventory
@@ -2701,6 +2727,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OperationBehavior: {fileID: 271867338402474615}
   ItemImage: {fileID: 8588544569527977249}
+  Plusbutton: {fileID: 5769025989229120080}
+  Iselected: 0
 --- !u!1 &7310597046511150804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3112,7 +3140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -93, y: -11}
+  m_AnchoredPosition: {x: -105.9, y: -10}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6581835743269899786
@@ -3197,6 +3225,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 775209331906562045}
+        m_TargetAssemblyTypeName: OPTemp, Assembly-CSharp
+        m_MethodName: SelectItemSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4336513374654027402}
         m_TargetAssemblyTypeName: ActionButton, Assembly-CSharp
         m_MethodName: OpenInventory
@@ -3223,6 +3263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OperationBehavior: {fileID: 9151232110939421462}
   ItemImage: {fileID: 2348045058196634178}
+  Plusbutton: {fileID: 1192483050456465202}
+  Iselected: 0
 --- !u!1 &7982873140042435339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,10 +3480,6 @@ MonoBehaviour:
   - {fileID: 7846506163812838512}
   - {fileID: 1597957423429833081}
   - {fileID: 7142599823196682409}
-  ItemReadyList:
-  - {fileID: 756754523522608769}
-  - {fileID: 1531824169683004985}
-  - {fileID: 4676063163930689961}
   ItemReadyImage:
   - {fileID: 2348045058196634178}
   - {fileID: 5194683638584421227}
