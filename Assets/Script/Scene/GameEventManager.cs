@@ -6,14 +6,14 @@ public class GameEventManager : MonoBehaviour
 {
     public GameManager gameManager;
     public bool IsAnomalyStarted;
-    public int gamestate,AnomalyIndex;
+    public int gamestate, AnomalyIndex, MaxAnomalySpawned;
     public List<int> spawnedAnomalyIndex;
-    public List<GameObject> spawnedAnomalyList;
+    public List<GameObject> spawnedAnomalyList, OnhandleAnomlaylist, ContainmentAnomalyList;
     public List<GameObject> anomalyPrefabs;
     public Transform anomalySpawner;
 
-    
-    
+
+
     [Header("Spawn Timer")]
     public float spawnInterval;   // seconds between spawns
     public float spawnTimer = 0f;      // counts up each frame
@@ -29,7 +29,7 @@ public class GameEventManager : MonoBehaviour
     void Update()
     {
         gamestate = gameManager.GameState;
-        if(gamestate == 1)
+        if (gamestate == 1)
         {
             IsAnomalyStarted = true;
 
@@ -40,10 +40,14 @@ public class GameEventManager : MonoBehaviour
             if (spawnTimer >= spawnInterval)
             {
                 AnomalyIndex = 0;
-                spawnAnomaly(AnomalyIndex);
-                spawnTimer = 0f;
+                if (spawnedAnomalyList.Count < MaxAnomalySpawned)
+                {
+                    spawnAnomaly(AnomalyIndex);
+                    spawnTimer = 0f;
+                }
+
             }
-               
+            CheckedHandled();
         }
     }
 
@@ -52,7 +56,21 @@ public class GameEventManager : MonoBehaviour
         GameObject anomaly = Instantiate(anomalyPrefabs[AnomalyIndex], anomalySpawner);
         spawnedAnomalyIndex.Add(AnomalyIndex);
         spawnedAnomalyList.Add(anomaly);
-       
+
     }
-   
+    public void CheckedHandled()
+    {
+        foreach (GameObject go in spawnedAnomalyList)
+        {
+            AnomalySetting anomaly = go.GetComponent<AnomalySetting>();
+
+            if (anomaly != null && anomaly.IsHandling)
+            {
+                if (!OnhandleAnomlaylist.Contains(go))
+                {
+                    OnhandleAnomlaylist.Add(go);
+                }
+            }
+        }
+    }
 }

@@ -60,6 +60,7 @@ public class AnomalySetting : MonoBehaviour
         }
         if (IsHandling) 
         {
+            AnomalyState = 1;
             Opresult = oPnAnomaly.startoperationCalculation();
         }
         if (IsContained) 

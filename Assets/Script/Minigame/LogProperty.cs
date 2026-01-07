@@ -27,7 +27,10 @@ public class LogProperty : MonoBehaviour
         EventName.text = EventNameText;
         Log_image.sprite = LogImageList[LogState];
 
-        
+        if(LogState != anomalySetting.AnomalyState)
+        {
+            Destroy(gameObject);
+        }
     }
     public void VISpawned()
     {

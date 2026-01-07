@@ -5272,6 +5272,7 @@ MonoBehaviour:
   IsAnomalyStarted: 0
   gamestate: 0
   AnomalyIndex: 0
+  MaxAnomalySpawned: 4
   spawnedAnomalyIndex: 
   spawnedAnomalyList: []
   anomalyPrefabs:
