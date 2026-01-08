@@ -21,7 +21,7 @@ public class AnomalySetting : MonoBehaviour
 
     [Header("Runtime State")]
     public float AnomalyTimer;       // how long this anomaly has been active
-    public float AnomalyState;       // current state (0 = inactive, 1 = active, 2 = resolved)
+    public int AnomalyState;       // current state 0 = threat, 1 = Handling, 2 = Contained)
     public bool IsHandling;          // true when being handled by team
     public bool IsContained;         // true when fully contained/resolved
 
@@ -65,7 +65,7 @@ public class AnomalySetting : MonoBehaviour
         }
         if (IsContained) 
         {
-            
+            AnomalyState = 2;
         }
     }
 }

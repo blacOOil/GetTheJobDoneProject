@@ -295,6 +295,8 @@ MonoBehaviour:
   LogState: 0
   LogImageList:
   - {fileID: 21300000, guid: 5164c1e558f6b5f4b824ad161ecce9be, type: 3}
+  - {fileID: 21300000, guid: c42e90527a1a02a41927414912763373, type: 3}
+  - {fileID: 21300000, guid: 908bb09c54b005949b70a5a18e32450a, type: 3}
 --- !u!1 &3733871699853669234
 GameObject:
   m_ObjectHideFlags: 0

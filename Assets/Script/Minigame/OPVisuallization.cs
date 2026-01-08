@@ -12,10 +12,11 @@ public class OPVisuallization : MonoBehaviour
 
 
     [Header("Settings")]
-    public float refreshInterval = 1f; // Update every 1 second
+    public float refreshInterval = 1f; 
     private float refreshTimer = 0f;
 
     private HashSet<GameObject> previousAnomalies = new HashSet<GameObject>();
+    private HashSet<GameObject> handledAnomalies = new HashSet<GameObject>();
 
     public MinigameSpawner minigameSpawner;
     [Header("Map Spawn Location")]
@@ -36,6 +37,7 @@ public class OPVisuallization : MonoBehaviour
         if (refreshTimer >= refreshInterval)
         {
             RefreshAnomalyList();
+            RefreshHandledAnomalyList();
             refreshTimer = 0f;
         }
 
@@ -51,19 +53,49 @@ public class OPVisuallization : MonoBehaviour
         // Detect new anomalies
         foreach (GameObject anomaly in foundAnomalies)
         {
-            if (!previousAnomalies.Contains(anomaly))
+            AnomalySetting anomalysetting = anomaly.GetComponent<AnomalySetting>();
+            if (!previousAnomalies.Contains(anomaly) )
             {
                 // New anomaly detected
                 AlertIconSpawning(Random.Range(0, ALertPrefab.Count),anomaly.GetComponent<AnomalySetting>());
                 previousAnomalies.Add(anomaly);
-                logsystem.SpawnedBlackLog(anomaly.GetComponent<AnomalySetting>());
-                logsystem.LogState = 0;
-            }
+                logsystem.SpawnedBlackLog(anomalysetting);
+                int anomalystate = anomalysetting.AnomalyState;
+                logsystem.LogState = anomalystate;
+               
+            }  
         }
 
+        previousAnomalies.RemoveWhere(a => a == null);
         // Clean list and update current anomalies
         Anomalylist.Clear();
         Anomalylist.AddRange(foundAnomalies);
+    }
+    public void RefreshHandledAnomalyList()
+    {
+        GameObject[] foundAnomalies = GameObject.FindGameObjectsWithTag("anomaly");
+
+        foreach (GameObject anomaly in foundAnomalies)
+        {
+            if (anomaly == null) continue;
+
+            AnomalySetting anomalysetting = anomaly.GetComponent<AnomalySetting>();
+
+            // Handling just started
+            if (anomalysetting.IsHandling && !handledAnomalies.Contains(anomaly))
+            {
+                handledAnomalies.Add(anomaly);
+
+                logsystem.SpawnedBlackLog(anomalysetting);
+                logsystem.LogState = anomalysetting.AnomalyState;
+
+                // 
+                previousAnomalies.Remove(anomaly);
+            }
+        }
+
+        // Cleanup destroyed objects
+        handledAnomalies.RemoveWhere(a => a == null);
     }
 
     public void AlertIconSpawning(int indexIcon,AnomalySetting anomaly)
