@@ -7,7 +7,7 @@ public class Default_Minigame : MonoBehaviour
     public int TypeOfConsole;
     public AnomalySetting anomalysetted;
     public GameObject foundedUI;
-    public GameObject InventoryUi,OperationSupportUi;
+    public GameObject InventoryUi,OperationSupportUi,ContainmentUI,ActionMakingUi;
     public TextMeshProUGUI Eventname, EventDes;
     public Image EventImage;
     
@@ -18,6 +18,7 @@ public class Default_Minigame : MonoBehaviour
         foundedUI.SetActive(false);
         InventoryUi.SetActive(false);
         OperationSupportUi.SetActive(false);
+        ContainmentUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,6 +33,10 @@ public class Default_Minigame : MonoBehaviour
             if (TypeOfConsole == 1) 
             {
                 ToggleSupportNeeded();
+            }
+            if(TypeOfConsole == 2)
+            {
+                ToggleContainmented();
             }
         }
     }
@@ -52,6 +57,12 @@ public class Default_Minigame : MonoBehaviour
     {
         OperationSupportUi.SetActive(true);
         InventoryUi.SetActive(false);
+    }
+    public void ToggleContainmented()
+    {
+        ContainmentUI.SetActive(true);
+        InventoryUi.SetActive(false);
+        ActionMakingUi.SetActive(false);
     }
     public void SendingSupport(int supportNumber)
     {
