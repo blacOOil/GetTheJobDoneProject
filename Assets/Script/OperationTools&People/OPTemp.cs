@@ -12,6 +12,7 @@ public class OPTemp : MonoBehaviour
     public Default_Minigame default_Minigame;
     public AnomalySetting anomalySetting;
 
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,5 +40,5 @@ public class OPTemp : MonoBehaviour
             item.Iselected = (i == slot);
         }
     }
-
+   
 }

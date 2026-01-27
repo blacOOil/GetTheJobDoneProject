@@ -8,7 +8,7 @@ public class OperationhandleSystem : MonoBehaviour
     public bool MobilityHandle; // true = placement false = creature
     public bool forhabitat; // true = forest false = city
     public int anoTypeA, anoTypeB, anoTypeC; // e.g. A = Magical, B = Creature, C = Machine failure
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

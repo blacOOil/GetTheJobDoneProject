@@ -17,6 +17,7 @@ public class OPVisuallization : MonoBehaviour
 
     private HashSet<GameObject> previousAnomalies = new HashSet<GameObject>();
     private HashSet<GameObject> handledAnomalies = new HashSet<GameObject>();
+    private HashSet<GameObject> ContainedAnomalies = new HashSet<GameObject>();
 
     public MinigameSpawner minigameSpawner;
     [Header("Map Spawn Location")]
@@ -38,6 +39,7 @@ public class OPVisuallization : MonoBehaviour
         {
             RefreshAnomalyList();
             RefreshHandledAnomalyList();
+            RefreshCotainingAnomalyList();
             refreshTimer = 0f;
         }
 
@@ -96,6 +98,32 @@ public class OPVisuallization : MonoBehaviour
 
         // Cleanup destroyed objects
         handledAnomalies.RemoveWhere(a => a == null);
+    }
+    public void RefreshCotainingAnomalyList()
+    {
+        GameObject[] foundAnomalies = GameObject.FindGameObjectsWithTag("anomaly");
+
+        foreach (GameObject anomaly in foundAnomalies)
+        {
+            if (anomaly == null) continue;
+
+            AnomalySetting anomalysetting = anomaly.GetComponent<AnomalySetting>();
+
+            // Handling just started
+            if (anomalysetting.IsContained && !ContainedAnomalies.Contains(anomaly))
+            {
+                ContainedAnomalies.Add(anomaly);
+
+                logsystem.SpawnedBlackLog(anomalysetting);
+                logsystem.LogState = anomalysetting.AnomalyState;
+
+                // 
+                previousAnomalies.Remove(anomaly);
+            }
+        }
+
+        // Cleanup destroyed objects
+        ContainedAnomalies.RemoveWhere(a => a == null);
     }
 
     public void AlertIconSpawning(int indexIcon,AnomalySetting anomaly)

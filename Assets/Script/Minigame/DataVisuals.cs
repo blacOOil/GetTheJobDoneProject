@@ -21,6 +21,7 @@ public class DataVisuals : MonoBehaviour
         ActiveThreatText.text = ActiveThreatNum.ToString();
         ActiveOPNum = GetActiveThreat(1);
         ActiveOPText.text = ActiveOPNum.ToString();
+        Containment = GetActiveThreat(2);
         ContainmentText.text = Containment.ToString();
     }
     public int GetActiveThreat(int AnomalyState)

@@ -7,15 +7,17 @@ public class Default_Minigame : MonoBehaviour
     public int TypeOfConsole;
     public AnomalySetting anomalysetted;
     public GameObject foundedUI;
-    public GameObject InventoryUi;
+    public GameObject InventoryUi,OperationSupportUi;
     public TextMeshProUGUI Eventname, EventDes;
     public Image EventImage;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         foundedUI.SetActive(false);
         InventoryUi.SetActive(false);
+        OperationSupportUi.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class Default_Minigame : MonoBehaviour
             }
             if (TypeOfConsole == 1) 
             {
-                
+                ToggleSupportNeeded();
             }
         }
     }
@@ -48,7 +50,13 @@ public class Default_Minigame : MonoBehaviour
     }
     public void ToggleSupportNeeded()
     {
-      
+        OperationSupportUi.SetActive(true);
+        InventoryUi.SetActive(false);
+    }
+    public void SendingSupport(int supportNumber)
+    {
+        anomalysetted.IsContained = true;
+        CloseWindow();
     }
 
     public void CloseWindow()
