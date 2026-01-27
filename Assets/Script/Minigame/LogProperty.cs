@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Collections.Generic;
 public class LogProperty : MonoBehaviour
 {
     public TextMeshProUGUI Time, EventName;
@@ -35,12 +36,14 @@ public class LogProperty : MonoBehaviour
     public void VISpawned()
     {
         if (!anomalySetting.IsFiledOpened)
-        {    
-            GameObject uiInstance = Instantiate(followUpUIPrefab, UISpawner.position, UISpawner.rotation, UISpawner);
-            Default_Minigame minigame = uiInstance.GetComponent<Default_Minigame>();
-            minigame.anomalysetted = anomalySetting;
-            minigame.TypeOfConsole = 0;
-            anomalySetting.IsFiledOpened = true;
+        {
+
+                GameObject uiInstance = Instantiate(followUpUIPrefab, UISpawner.position, UISpawner.rotation, UISpawner);
+                Default_Minigame minigame = uiInstance.GetComponent<Default_Minigame>();
+                minigame.anomalysetted = anomalySetting;
+                minigame.TypeOfConsole = LogState;
+                anomalySetting.IsFiledOpened = true;
+            
         }
 
 

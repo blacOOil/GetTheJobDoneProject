@@ -5,9 +5,9 @@ public class GameManager : MonoBehaviour
     public int GameState,maxGameStated;
     public float Timer;
     public bool Isworkdone, IsCounting;
-    public bool IsStartWorking;
+    public bool IsStartWorking,IsgamePause;
     public ExitDoors exitDoors;
-    public GameObject player,HCamera;
+    public GameObject player,HCamera,PauseMenu;
     public Transform HouseTp,OfficeTp;
    
 
@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        IsgamePause = false;
         GameState = 0;
         IsStartWorking = false;
         Timer = startTime;
@@ -26,6 +27,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PauseMenu.SetActive(IsgamePause);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            IsgamePause = !IsgamePause;
+        }
+        
         if (exitDoors.IsExitOffice)
         {
             Isworkdone = false;

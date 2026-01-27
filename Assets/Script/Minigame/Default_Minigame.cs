@@ -6,7 +6,8 @@ public class Default_Minigame : MonoBehaviour
 {
     public int TypeOfConsole;
     public AnomalySetting anomalysetted;
-    public GameObject foundedUI,OperationUI;
+    public GameObject foundedUI;
+    public GameObject InventoryUi;
     public TextMeshProUGUI Eventname, EventDes;
     public Image EventImage;
 
@@ -14,7 +15,7 @@ public class Default_Minigame : MonoBehaviour
     void Start()
     {
         foundedUI.SetActive(false);
-        OperationUI.SetActive(false);
+        InventoryUi.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,6 +26,10 @@ public class Default_Minigame : MonoBehaviour
           if(TypeOfConsole == 0)
             {
                 ToggleAlertFounded();
+            }
+            if (TypeOfConsole == 1) 
+            {
+                
             }
         }
     }
@@ -40,6 +45,10 @@ public class Default_Minigame : MonoBehaviour
         EventDes.text = anomalysetted.AnomalyEventDes;
         EventImage.sprite = anomalysetted.AnomalyImage;
 
+    }
+    public void ToggleSupportNeeded()
+    {
+      
     }
 
     public void CloseWindow()
