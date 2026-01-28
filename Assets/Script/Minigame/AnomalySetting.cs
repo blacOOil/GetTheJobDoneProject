@@ -13,9 +13,9 @@ public class AnomalySetting : MonoBehaviour
 
     [Header("Anomaly Parameters")]
     public bool IsAnomalymobility; // true = movable false = placement
-    public int IsEventCrowed;      // 1 = in the City 2 = in  the forest
-    public int anoTypeA, anoTypeB,anoTypeC; // e.g. A = Magical, B = Creature, C = Machine failure
-    public float BehaviorFriendly,BehaviorRule, BehaviorAggressive, BehaviorRandomness;      
+    public int IsEventCrowed;      // poppulation of Civilion around anomaly 0 No people 5 Urban area 10 Big city area
+    public int anoPhysicalScore, anoMagicalScore,anopsychicScore; // e.g. A = Physical 0-10, B = Magical 0-10, C = Psycho 0-10
+    public float BehaviorAggressionScore,BehaviorRandomnessScore;      
     public float ThreatLevel;        // value to represent danger level (0–10)
     public Sprite AnomalyImage;      // image or icon for UI
 

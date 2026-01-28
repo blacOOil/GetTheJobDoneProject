@@ -7195,7 +7195,7 @@ MonoBehaviour:
   OnhandleAnomlaylist: []
   ContainmentAnomalyList: []
   anomalyPrefabs:
-  - {fileID: 6659976110359506276, guid: cba954293bc79084aac2e795b8688ae3, type: 3}
+  - {fileID: 6659976110359506276, guid: 9480cfa62389c1340aa35a3c7e5cac10, type: 3}
   anomalySpawner: {fileID: 1924677291}
   spawnInterval: 1.5
   spawnTimer: 0

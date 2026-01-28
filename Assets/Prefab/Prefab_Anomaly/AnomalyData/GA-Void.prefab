@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6659976110359506276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7992410964901219186}
+  - component: {fileID: 1100591908293159677}
+  - component: {fileID: 5559013774832679600}
+  m_Layer: 0
+  m_Name: GA-Void
+  m_TagString: anomaly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7992410964901219186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659976110359506276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.4664955, y: -8.495847, z: -2.113178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100591908293159677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659976110359506276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b541d727cd9c0c242b44895de0d964d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnomalyEventName: Geomatry Glitch
+  AnomalyEventDes: ' illusion of object, ground, area or compound with no physical
+    existence. '
+  AnomalyName: GA-Void
+  AnomalyDes: Unexisting object, ground or area. some are contain with Low to High
+    gravitational pull.
+  AnomalyPlace: 0
+  IsAnomalymobility: 0
+  IsEventCrowed: 3
+  anoPhysicalScore: 5
+  anoMagicalScore: 5
+  anopsychicScore: 0
+  BehaviorAggressionScore: 2
+  BehaviorRandomnessScore: 5
+  ThreatLevel: 4
+  AnomalyImage: {fileID: 21300000, guid: b08475da978261844ba87efe8f7a1f69, type: 3}
+  AnomalyTimer: 10
+  AnomalyState: 0
+  IsHandling: 0
+  IsContained: 0
+  IsFiledOpened: 0
+  operationhandler: {fileID: 0}
+  oPnAnomaly: {fileID: 5559013774832679600}
+  Opresult: 0
+  OperativeItem: []
+  CountryName: Russia
+  AddressName: Moscow
+  CountryId: 0
+  AddressId: 0
+--- !u!114 &5559013774832679600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6659976110359506276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ae78f95d1abed41a104c6eb49c91f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnomalySetting: {fileID: 1100591908293159677}
+  OperationhandleSystem: {fileID: 0}
+  Result: 0
