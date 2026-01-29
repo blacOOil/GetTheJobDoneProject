@@ -8,8 +8,8 @@ public class Default_Minigame : MonoBehaviour
     public AnomalySetting anomalysetted;
     public GameObject foundedUI;
     public GameObject InventoryUi,OperationSupportUi,ContainmentUI,ActionMakingUi;
-    public TextMeshProUGUI Eventname, EventDes,SupEventName,SupEventDes;
-    public Image EventImage;
+    public TextMeshProUGUI Eventname, EventDes,SupEventName,SupEventDes,AnomalyName;
+    public Image EventImage,AnomalyImage;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -68,6 +68,9 @@ public class Default_Minigame : MonoBehaviour
         ContainmentUI.SetActive(true);
         InventoryUi.SetActive(false);
         ActionMakingUi.SetActive(false);
+        AnomalyName.text = anomalysetted.AnomalyName;
+        AnomalyImage.sprite = anomalysetted.AnomalyImage;
+
     }
     public void SendingSupport(int supportNumber)
     {
