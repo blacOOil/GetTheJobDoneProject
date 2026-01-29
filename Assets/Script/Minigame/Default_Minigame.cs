@@ -8,7 +8,7 @@ public class Default_Minigame : MonoBehaviour
     public AnomalySetting anomalysetted;
     public GameObject foundedUI;
     public GameObject InventoryUi,OperationSupportUi,ContainmentUI,ActionMakingUi;
-    public TextMeshProUGUI Eventname, EventDes;
+    public TextMeshProUGUI Eventname, EventDes,SupEventName,SupEventDes;
     public Image EventImage;
     
 
@@ -48,6 +48,7 @@ public class Default_Minigame : MonoBehaviour
    public void ToggleAlertFounded()
     {
         foundedUI.SetActive(true);
+        ActionMakingUi.SetActive(true);
         Eventname.text = anomalysetted.AnomalyEventName;
         EventDes.text = anomalysetted.AnomalyEventDes;
         EventImage.sprite = anomalysetted.AnomalyImage;
@@ -57,6 +58,10 @@ public class Default_Minigame : MonoBehaviour
     {
         OperationSupportUi.SetActive(true);
         InventoryUi.SetActive(false);
+        ActionMakingUi.SetActive(false);
+        SupEventName.text = anomalysetted.AnomalyEventName;
+        SupEventDes.text = anomalysetted.AnomalyDes;
+
     }
     public void ToggleContainmented()
     {
