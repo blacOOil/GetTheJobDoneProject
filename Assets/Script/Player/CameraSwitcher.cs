@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CameraSwitcher : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CameraSwitcher : MonoBehaviour
     public GameObject Cam1, Cam2, Start_Button;
     public float PlayerCheckerRadius;
     public int GameState;
+    public GameObject LoadingUi;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,8 +26,9 @@ public class CameraSwitcher : MonoBehaviour
         {
             Start_Button.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E)) {
-                if (GameState == 0)
+                if (GameState == 0 && IsgameStarted == false)
                 {
+                    LoadingUi.SetActive(false);
                     IsgameStarted = true;
                     gameManager.GameState++;
                 }
@@ -65,6 +68,7 @@ public class CameraSwitcher : MonoBehaviour
     {
         return CheckProximity("Player");
     }
+  
 
 
-}
+    }

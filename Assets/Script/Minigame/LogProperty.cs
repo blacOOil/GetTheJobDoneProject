@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using System.Collections.Generic;
+
 public class LogProperty : MonoBehaviour
 {
     public TextMeshProUGUI Time, EventName;
