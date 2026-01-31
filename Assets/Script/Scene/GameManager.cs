@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public int GameState,maxGameStated;
     public float Timer;
-    public bool Isworkdone, IsCounting;
+    public bool Isworkdone, IsCounting,IsAlert;
     public bool IsStartWorking,IsgamePause;
     public ExitDoors exitDoors;
     public GameObject player,HCamera,PauseMenu;
@@ -32,7 +32,13 @@ public class GameManager : MonoBehaviour
         {
             IsgamePause = !IsgamePause;
         }
-        
+        if (IsAlert)
+        {
+            GameState = 2;
+            IsStartWorking = false;
+            IsCounting = false;
+
+        }
         if (exitDoors.IsExitOffice)
         {
             Isworkdone = false;
