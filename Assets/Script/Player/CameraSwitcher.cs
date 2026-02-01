@@ -24,7 +24,7 @@ public class CameraSwitcher : MonoBehaviour
         GameState = gameManager.GameState;
         if (IsplayerClose())
         {
-            Start_Button.SetActive(true);
+           // Start_Button.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E)) {
                 if (GameState == 0 && IsgameStarted == false)
                 {
