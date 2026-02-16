@@ -5567,6 +5567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950705373}
+  - component: {fileID: 950705374}
   m_Layer: 0
   m_Name: MainMonitor
   m_TagString: Untagged
@@ -5592,6 +5593,33 @@ Transform:
   - {fileID: 1084568768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &950705374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950705372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214e607a4b498b14f924892a485863f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMonitors
+  totalThreatNum: 0
+  totalOperation: 0
+  totalContainment: 0
+  TotalThreatMean: 0
+  Operationrate: 0
+  Containmentrate: 0
+  Resouresusage: 0
+  Maxresoures: 0
+  totalThreatText: {fileID: 73146188}
+  totalOperationText: {fileID: 952511357}
+  totalContainmentText: {fileID: 1253351458}
+  TotalThreatMeanText: {fileID: 337247289}
+  OperationrateText: {fileID: 1955641130}
+  ContainmentrateText: {fileID: 1108277366}
+  ResouresusageText: {fileID: 1160635893}
 --- !u!1 &952511355
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,7 +7001,7 @@ GameObject:
   - component: {fileID: 1108277367}
   - component: {fileID: 1108277366}
   m_Layer: 0
-  m_Name: OperationPercentage (1)
+  m_Name: 'ContainmentPercentage '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7110,7 +7138,7 @@ GameObject:
   - component: {fileID: 1160635894}
   - component: {fileID: 1160635893}
   m_Layer: 0
-  m_Name: OperationPercentage (2)
+  m_Name: 'ResourcesPercentage '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
