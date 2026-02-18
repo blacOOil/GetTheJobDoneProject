@@ -12924,6 +12924,7 @@ GameObject:
   - component: {fileID: 1904468370}
   - component: {fileID: 1904468371}
   - component: {fileID: 1904468372}
+  - component: {fileID: 1904468373}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13016,6 +13017,18 @@ MonoBehaviour:
   OperationItem:
   - {fileID: 457824173}
   - {fileID: 2001917163}
+--- !u!114 &1904468373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904468368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52020a9c364a3b48a055312ebd0303c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OperationEventManager
 --- !u!1001 &1914329310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14538,6 +14551,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4289423748387446589, guid: 0da4edfe214c60b4d9be5f86bec0c178, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366233143592584097, guid: 0da4edfe214c60b4d9be5f86bec0c178, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

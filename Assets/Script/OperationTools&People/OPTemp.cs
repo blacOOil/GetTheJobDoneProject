@@ -30,6 +30,7 @@ public class OPTemp : MonoBehaviour
    
     public void DeployOperation()
     {
+        assingOperation();
         anomalySetting.operationhandler = operationhandleSystem;
     }
     public void SelectItemSlot(int slot)
@@ -40,5 +41,8 @@ public class OPTemp : MonoBehaviour
             item.Iselected = (i == slot);
         }
     }
-   
+    public void assingOperation() 
+    {
+    
+    }
 }
